@@ -1,5 +1,7 @@
 package br.edu.utfpr.trocatela
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -51,6 +53,13 @@ class ConfirmarActivity : AppCompatActivity() {
     }
 
     fun btnOnClickConfirmarSMS(){
+        val intent = Intent(Intent.ACTION_VIEW) // intent com ação generica que diz ao android que queremos visualizar algo
 
+        val msg:String = "Cod:${tvCod.text}, Qtd: ${tvQtd.text}, Valor: ${tvValor.text}"
+
+        intent.setData(Uri.parse("sms:+5565996237611")) // Uniform Resource Identifier (URI). Informando para o android que queremos enviar uma mensagem de texto para o telefone
+        intent.putExtra("sms_body",msg) // criamos o corpo da mensagem
+
+        startActivity(intent) // iniciando a activity
     }
 }
