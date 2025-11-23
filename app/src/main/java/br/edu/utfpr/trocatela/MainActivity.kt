@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun switchActivity(){
 
-        val intent = Intent(this, LancamentoAcitivity::class.java) // cria uma intenção para a activity LancamentoAcitivity
+        val intent = Intent(this, LancamentoActivity::class.java) // cria uma intenção para a activity LancamentoAcitivity
 
         startActivity(intent) // inicia a intenção
 

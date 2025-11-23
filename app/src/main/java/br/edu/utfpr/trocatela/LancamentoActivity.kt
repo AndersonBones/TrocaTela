@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class LancamentoAcitivity : AppCompatActivity() {
+class LancamentoActivity : AppCompatActivity() {
 
     lateinit var etQtd: EditText
     lateinit var etValor: EditText
@@ -22,7 +22,7 @@ class LancamentoAcitivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_lancamento_acitivity)
+        setContentView(R.layout.activity_lancamento_activity)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -69,15 +69,15 @@ class LancamentoAcitivity : AppCompatActivity() {
     }
 
     private fun btOnClickcListar(){
-        val intent = Intent(this, ListarActivity::class.java)
-        getResult.launch(intent)
+        val intent = Intent(this, ListarActivity::class.java) // cria uma intent explicita => ir para a ListarActivity
+        getResult.launch(intent) // incia a intent e espera um retorno
 
     }
 
-    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ it->
-        if(it.resultCode == RESULT_OK){
-            val cod: Int? = it.data?.getIntExtra("cod", 0)
-            etCod.setText(cod.toString())
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result->  // chamamos um contrato que define o tipo de operação. A operação é iniciar uma activity e esperar um resultado.
+        if(result.resultCode == RESULT_OK){ // result contem a intent com os resultados que foram lançados na activity anterior (ListarActivity)
+            val cod: Int? = result.data?.getIntExtra("cod", 0) // lançamos a intent com um resultCode e um valor com chave "cod"
+            etCod.setText(cod.toString()) // definimos o texto do EditText como o valor retornado pela intent
         }
     }
 }

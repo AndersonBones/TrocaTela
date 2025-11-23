@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LancamentoAcitivity"
+            android:name=".LancamentoActivity"
             android:exported="false" />
     </application>
 
