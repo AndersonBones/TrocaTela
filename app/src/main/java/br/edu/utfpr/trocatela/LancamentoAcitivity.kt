@@ -2,11 +2,11 @@ package br.edu.utfpr.trocatela
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -36,6 +36,10 @@ class LancamentoAcitivity : AppCompatActivity() {
             btOnClickConfirmar()
         }
 
+        btListar.setOnClickListener{
+            btOnClickcListar()
+        }
+
     }
     
     private fun initComponents(){
@@ -62,11 +66,18 @@ class LancamentoAcitivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
     }
 
     private fun btOnClickcListar(){
+        val intent = Intent(this, ListarActivity::class.java)
+        getResult.launch(intent)
 
+    }
+
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ it->
+        if(it.resultCode == RESULT_OK){
+            val cod: Int? = it.data?.getIntExtra("cod", 0)
+            etCod.setText(cod.toString())
+        }
     }
 }
