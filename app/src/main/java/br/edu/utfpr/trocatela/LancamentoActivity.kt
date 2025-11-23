@@ -78,6 +78,13 @@ class LancamentoActivity : AppCompatActivity() {
         if(result.resultCode == RESULT_OK){ // result contem a intent com os resultados que foram lançados na activity anterior (ListarActivity)
             val cod: Int? = result.data?.getIntExtra("cod", 0) // lançamos a intent com um resultCode e um valor com chave "cod"
             etCod.setText(cod.toString()) // definimos o texto do EditText como o valor retornado pela intent
+
+        }
+
+        if(result.resultCode == RESULT_CANCELED){
+
+            Toast.makeText(this, "Nenhum produto selecionado", Toast.LENGTH_LONG).show()
+
         }
     }
 }

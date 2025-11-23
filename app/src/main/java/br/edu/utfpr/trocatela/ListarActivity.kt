@@ -26,6 +26,7 @@ class ListarActivity : AppCompatActivity() {
 
         lvProdutos.setOnItemClickListener { parent, view, position, id ->
             val cod:Int = position + 1
+
             intent.putExtra("cod", cod)
             setResult(RESULT_OK, intent)
             finish()
