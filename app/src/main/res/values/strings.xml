@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TrocaTela</string>
+    <string name="bt_launch_hint">Lançamento</string>
+    <string name="bt_confirm">Confirmar</string>
+    <string name="bt_list">Listar</string>
+
+    <string name="etQuantity">Quantidade</string>
+    <string name="etUnitValue">Valor Unitário</string>
+    <string name="btConfirmWithSMS">Confirmar com SMS</string>
+    <string name="etAmountHint">Valor Total</string>
+    <string name="etAmountValue"></string>
+
 </resources>

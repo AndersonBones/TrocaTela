@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">SwitchView</string>
+    <string name="bt_launch_hint">Launch</string>
+    <string name="bt_confirm">Confirm</string>
+    <string name="bt_list">List</string>
+
+    <string name="etQuantity">Quantity</string>
+    <string name="etUnitValue">Unit Value</string>
+    <string name="btConfirmWithSMS">Confirm with SMS</string>
+    <string name="etAmountHint">Amount</string>
+    <string name="etAmountValue"></string>
+</resources>

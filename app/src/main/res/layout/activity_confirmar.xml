@@ -16,7 +16,7 @@
             android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cód:">
+            android:text="Cod">
 
         </TextView>
 
@@ -37,7 +37,7 @@
             android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qtde:">
+            android:text="@string/etQuantity">
 
         </TextView>
 
@@ -57,7 +57,7 @@
             android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valor:">
+            android:text="@string/etUnitValue">
 
         </TextView>
 
@@ -71,13 +71,35 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/etAmountHint">
+
+        </TextView>
+
+        <TextView
+            android:padding="16dp"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAmountValue"
+            android:inputType="number"
+            android:text="@string/etAmountValue"
+            ></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btConfirmarSMS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Confirmar com SMS"></Button>
+            android:text="@string/btConfirmWithSMS"></Button>
 
     </LinearLayout>
 

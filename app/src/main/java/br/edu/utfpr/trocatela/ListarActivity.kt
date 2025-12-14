@@ -7,24 +7,30 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.utfpr.trocatela.databinding.ActivityConfirmarBinding
+import br.edu.utfpr.trocatela.databinding.ActivityListarBinding
 
 class ListarActivity : AppCompatActivity() {
 
-    private lateinit var lvProdutos: ListView
+    private lateinit var binding: ActivityListarBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_listar)
+        binding = ActivityListarBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lvProdutos)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        lvProdutos = findViewById(R.id.lvProdutos)
 
-        lvProdutos.setOnItemClickListener { parent, view, position, id ->
+
+        // evento disparado ao clicar em cada elemento
+        binding.lvProdutos.setOnItemClickListener { parent, view, position, id ->
             val cod:Int = position + 1
 
             intent.putExtra("cod", cod)

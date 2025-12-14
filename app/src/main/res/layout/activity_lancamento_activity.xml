@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cód:">
+            android:text="Cod:">
 
         </TextView>
 
@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Qtde:">
+            android:text="@string/etQuantity">
 
         </TextView>
 
@@ -51,7 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valor:">
+            android:text="@string/etUnitValue">
 
         </TextView>
 
@@ -62,20 +62,49 @@
             android:inputType="numberDecimal"></EditText>
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/etAmountHint">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvAmountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/etAmountValue"
+            android:layout_marginStart="16dp"
+            >
+
+        </TextView>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Confirmar"
+            android:text="@string/bt_confirm"
             android:id="@+id/btConfirmar"></Button>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Listar"
+            android:text="@string/bt_list"
             android:id="@+id/btListar"></Button>
     </LinearLayout>
 

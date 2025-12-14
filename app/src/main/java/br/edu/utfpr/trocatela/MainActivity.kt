@@ -8,10 +8,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import br.edu.utfpr.trocatela.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btListar: Button
+    private lateinit var binding: ActivityMainBinding
 
 
 
@@ -20,8 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         enableEdgeToEdge()
 
-        setContentView(R.layout.activity_main) // carrega especificamente a activity_main.xml
+        binding = ActivityMainBinding.inflate(layoutInflater) // inflando os componentes da activity
+        setContentView(binding.root) // setando o componente raiz como nossa view principal
+
         val mainView = findViewById<View>(R.id.main)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(mainView) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,21 +33,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        initComponent() // inicializa os componentes da activity
 
-        btListar.setOnClickListener { // adiciona um listener ao botão
+        binding.btLancamento.setOnClickListener { // adiciona um listener ao botão
             switchActivity()
         }
     }
 
 
 
-    private fun initComponent(){
-        btListar = findViewById(R.id.btListar)
-    }
+
 
     private fun switchActivity(){
 
+        // a inteção é pular do contexto atual para LancamentoActivity
         val intent = Intent(this, LancamentoActivity::class.java) // cria uma intenção para a activity LancamentoAcitivity
 
         startActivity(intent) // inicia a intenção
